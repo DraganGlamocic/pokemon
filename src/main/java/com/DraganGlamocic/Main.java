@@ -8,12 +8,12 @@ import com.DraganGlamocic.pokemon.Squirtle;
 public class Main {
     public static void main(String[] args) {
         Pokemon bulbasaur = new Bulbasaur("Bubba");
-//        Pokemon charmander = new Charmander("Chandler");
-//        Pokemon squirtle = new Squirtle("Smelly");
+        Pokemon charmander = new Charmander("Chandler");
+        Pokemon squirtle = new Squirtle("Smelly");
 
         bulbasaur.attack();
-//        charmander.attack();
-//        squirtle.attack();
+        charmander.attack();
+        squirtle.attack();
 
 
     }
