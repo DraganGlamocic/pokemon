@@ -6,8 +6,8 @@ import com.DraganGlamocic.interfaces.Attack;
 public class FireSpinAttack implements Attack {
 
     @Override
-    public void attack() {
-        System.out.println("Charmander used Fire Spin!");
+    public String attack() {
+        return "Fire Spin";
     }
 }
 
