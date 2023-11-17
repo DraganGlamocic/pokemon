@@ -1,15 +1,24 @@
 package com.DraganGlamocic;
 
+import com.DraganGlamocic.arrays.OwnedPokemonList;
+import com.DraganGlamocic.menu.CheckOwnedPokemon;
+import com.DraganGlamocic.menu.Fight;
 import com.DraganGlamocic.pokemon.Bulbasaur;
 import com.DraganGlamocic.pokemon.Charmander;
 import com.DraganGlamocic.pokemon.Pokemon;
 import com.DraganGlamocic.pokemon.Squirtle;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        OwnedPokemonList ownedPokemonList = new OwnedPokemonList();
+        List<Pokemon> ownedPokemon = ownedPokemonList.getOwnedPokemon();
+        Fight fight = new Fight();
+        CheckOwnedPokemon checkOwnedPokemon = new CheckOwnedPokemon();
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Hey, what is your name?");
         System.out.println("My name is: ");
         String playerName = scanner.nextLine();
@@ -20,7 +29,7 @@ public class Main {
 
         while (!validSelection) {
 
-            System.out.println("Please choose a starter pokemon: [Bulbasaur] [Charmander] [Squirtle]");
+            System.out.println("Please choose a starter Pokemon: [Bulbasaur] [Charmander] [Squirtle]");
             System.out.print("Which one would you like: ");
             String chosenPokemonInput = scanner.nextLine();
             chosenPokemonInput = chosenPokemonInput.toLowerCase();
@@ -30,6 +39,7 @@ public class Main {
                     System.out.print("Give your Bulbasaur a name: ");
                     String bulbasaurName = scanner.nextLine();
                     chosenPokemon = new Bulbasaur(bulbasaurName);
+                    ownedPokemonList.addPokemon(chosenPokemon);
                     System.out.println("Take good care of " + bulbasaurName + ".");
                     validSelection = true;
                     break;
@@ -48,13 +58,26 @@ public class Main {
                     System.out.println("Take good care of " + squirtleName + ".");
                     break;
                 default:
-                    System.out.println("Hmmm... I don't think we have that pokemon.");
+                    System.out.println("Hmmm... I don't think we have that Pokemon.");
             }
         }
 
-        if (chosenPokemon != null) {
-            chosenPokemon.attack();     // How to choose an attack? Learn an attack? choose from array or list?
+        boolean gameFinished = false;
+        while (!gameFinished) {
+            System.out.println("What would you like to do?");
+            System.out.println("Fight[1] / Check owned Pokemon[2]:");
+            String input = scanner.nextLine();
 
+            switch (input) {
+                case "1":
+                    fight.fight(ownedPokemonList); // not working
+                    break;
+                case "2":
+                    checkOwnedPokemon.checkOwnedPokemon(ownedPokemonList); // not working
+                    break;
+                default:
+                    System.out.println("Type a number...");
+            }
         }
     }
 }
