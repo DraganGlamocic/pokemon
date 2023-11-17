@@ -73,6 +73,8 @@ public class Main {
                     fight.fight(ownedPokemonList); // not working
                     break;
                 case "2":
+                    System.out.println("Number of owned Pokémon: " + ownedPokemonList.getOwnedPokemon().size()); // Added debugging statement
+
                     checkOwnedPokemon.checkOwnedPokemon(ownedPokemonList); // not working
                     break;
                 default:

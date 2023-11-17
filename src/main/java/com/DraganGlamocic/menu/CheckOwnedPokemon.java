@@ -9,7 +9,7 @@ public class CheckOwnedPokemon {
     public void checkOwnedPokemon(OwnedPokemonList ownedPokemonList) {
         List<Pokemon> ownedPokemon = ownedPokemonList.getOwnedPokemon();
         for (Pokemon pokemon : ownedPokemon) {
-            System.out.println(pokemon.getPokemonName());
+            System.out.println(pokemon.getPokemonName()); // Print the name of the current Pokémon
         }
     }
 }
