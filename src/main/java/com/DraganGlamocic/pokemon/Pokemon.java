@@ -3,10 +3,12 @@ package com.DraganGlamocic.pokemon;
 import com.DraganGlamocic.interfaces.Attack;
 
 public abstract class Pokemon {
+    private String pokemonKind;
     private String pokemonName;
     private String attackName;
     protected final Attack attack;
 
+    public abstract String getPokemonKind();
 
     public Pokemon(String pokemonName, Attack attack) {
         this.pokemonName = pokemonName;
@@ -22,6 +24,8 @@ public abstract class Pokemon {
     }
 
     public void attack() {
-        attack.attack();
     }
+
+    // Abstract method to get the Pokémon's kind (Bulbasaur, Charmander, Squirtle)
+
 }

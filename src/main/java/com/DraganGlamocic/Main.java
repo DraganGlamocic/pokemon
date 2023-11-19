@@ -47,6 +47,7 @@ public class Main {
                     System.out.print("Give your Charmander a name: ");
                     String charmanderName = scanner.nextLine();
                     chosenPokemon = new Charmander(charmanderName);
+                    ownedPokemonList.addPokemon(chosenPokemon);
                     validSelection = true;
                     System.out.println("Take good care of " + charmanderName + ".");
                     break;
@@ -54,6 +55,7 @@ public class Main {
                     System.out.print("Give your Squirtle a name: ");
                     String squirtleName = scanner.nextLine();
                     chosenPokemon = new Squirtle(squirtleName);
+                    ownedPokemonList.addPokemon(chosenPokemon);
                     validSelection = true;
                     System.out.println("Take good care of " + squirtleName + ".");
                     break;
